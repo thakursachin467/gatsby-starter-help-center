@@ -6,28 +6,28 @@ module.exports = {
     // "Advice and answers by the MyCompany-Team"
     description: `Get a free self-hosted Help Center like this one`,
     siteUrl: `https://help.dferber.de/`,
-    language: "en",
+    language: 'en',
     texts: {
-      allCollectionsText: "All Collections",
-      searchPlaceholderText: "Search for answers…",
-      lastModifiedText: "Last edited",
-      publishedOnText: "Published on",
-      writtenByText: "Written by",
-      articlesInCollectionZeroText: "articles in this collection",
-      articlesInCollectionOneText: "article in this collection",
-      articlesInCollectionTwoText: "articles in this collection",
-      articlesInCollectionMultipleText: "articles in this collection",
+      allCollectionsText: 'All Collections',
+      searchPlaceholderText: 'Search for answers…',
+      lastModifiedText: 'Last edited',
+      publishedOnText: 'Published on',
+      writtenByText: 'Written by',
+      articlesInCollectionZeroText: 'articles in this collection',
+      articlesInCollectionOneText: 'article in this collection',
+      articlesInCollectionTwoText: 'articles in this collection',
+      articlesInCollectionMultipleText: 'articles in this collection',
     },
   },
   mapping: {
-    "MarkdownRemark.frontmatter.author": `AuthorsYaml`,
-    "MarkdownRemark.frontmatter.collection": `CollectionsYaml`,
+    'MarkdownRemark.frontmatter.author': `AuthorsYaml`,
+    'MarkdownRemark.frontmatter.collection': `CollectionsYaml`,
   },
   plugins: [
-    "gatsby-plugin-theme-ui",
+    'gatsby-plugin-theme-ui',
     `gatsby-transformer-yaml`,
     `gatsby-plugin-sitemap`,
-    "gatsby-plugin-simple-analytics",
+    'gatsby-plugin-simple-analytics',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -92,6 +92,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
