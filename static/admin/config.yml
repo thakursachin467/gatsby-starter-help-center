@@ -1,0 +1,36 @@
+backend: # Set up your backend
+  name: git-gateway
+  branch: master
+
+local_backend: true # Optional if you want to use the local proxy mode
+
+publish_mode: editorial_workflow
+media_folder: media # I'm not using these default media directories at the moment.
+
+site_url: ""
+display_url: ""
+show_preview_links: true
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content"
+    create: true
+    delete: true
+    path: "{{slug}}/index.md"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: blog/{{slug}}
+    media_folder: "images"
+    public_folder: "./images"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
